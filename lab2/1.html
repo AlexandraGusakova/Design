@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>
+    Radio
+</title>
+</head>
+<body>
+    <img src="1.jpg" width="40%" height="auto">
+    <img src="2.png" id = "ball" width="50px" height="auto" onmouseover="stop_run()">
+    
+    <script src='https://morulus.github.io/flyingbezier/dist/flyingbezier.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+    <script>
+
+            
+var ball = document.getElementById('ball');
+
+  ball.onmousedown = function(e) {
+  
+  var coords = getCoords(ball);
+  var shiftX = e.pageX - coords.left;
+  var shiftY = e.pageY - coords.top;
+
+  ball.style.position = 'absolute';
+  document.body.appendChild(ball);
+  moveAt(e);
+
+  ball.style.zIndex = 1000; // над другими элементами
+
+  function moveAt(e) {
+    ball.style.left = e.pageX - shiftX + 'px';
+    ball.style.top = e.pageY - shiftY + 'px';
+  }
+
+  document.onmousemove = function(e) {
+    moveAt(e);
+  };
+
+  ball.onmouseup = function() {
+    document.onmousemove = null;
+    ball.onmouseup = null;
+    coords2 = getCoords(ball);
+    
+    if (coords2.left <= 450 && coords2.top <= 200)
+        {alert('Поздравляем, студент!');}
+  };
+
+}
+
+ball.ondragstart = function() {
+  return false;
+};
+
+function getCoords(elem) {   // кроме IE8-
+  var box = elem.getBoundingClientRect();
+  return {
+    top: box.top + pageYOffset,
+    left: box.left + pageXOffset
+  };
+}
+
+        
+        
+window.onload = function () {
+  // Fly
+  flybezier({
+    path: "M129.391,130.778c14.768,3.404,41.872,17.266,46.836-13.813s3.885-41.224,45.757-43.814 s89.787-21.583,5.18-22.447s-105.327,5.396-124.752-13.382S70.9,20.919,51.691,22.43s-14.245-2.158-22.015-8.202 s-42.087-30.865-23.958,6.259s2.59,66.909,49.642,53.743S60.108,114.806,129.391,130.778z",
+    areaWidth: 600,
+    areaHeight: 400,
+    
+  }, function(x,y,angle) {
+    ball.style.transform = "translateX("+x+"px) translateY("+y+"px) rotateZ("+(angle)+"deg)";
+  });
+    
+}
+
+    </script>
+</body>
+</html>

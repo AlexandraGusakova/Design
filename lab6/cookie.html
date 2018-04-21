@@ -1,0 +1,66 @@
+
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Работа с куками</title>
+    <style> 
+      
+body
+  {
+    background-image: url(K.jpg);
+    
+   }
+a{
+            
+        }
+    </style>
+</head>
+<body>
+
+<script language="javascript" type="text/javascript">
+    //установки куки
+function set_cookie ( name, value ) 
+{
+  var cookie_string = name + "=" + escape ( value );
+
+}
+
+function delete_cookie ( cookie_name )
+{
+  var cookie_date = new Date ( );  //Текущая дата и время
+  cookie_date.setTime ( cookie_date.getTime() - 1 );
+  document.cookie = cookie_name += "=; expires=" + cookie_date.toGMTString();
+}
+
+function get_cookie ( cookie_name )
+{
+  var results = document.cookie.match ( '(^|;) ?' + cookie_name + '=([^;]*)(;|$)' );
+
+  if ( results )
+    return ( results[2]);
+  else
+    return "";
+}
+
+if ( ! get_cookie ( "username", "password" ) )
+{
+  var username = prompt ( "Пожалуйста, ведите логин", "" );
+  var password = prompt ("Пожалуйста, ведите пороль", "" );
+  if ( username, password )
+  {
+    set_cookie ( "username", username);
+    set_cookie ( "password", password);
+  }     
+}
+else
+{
+  var username2 = get_cookie ( "username" );
+var password2 = get_cookie("password");
+  document.write ( "Привет, " + username2 + "!<br>" );
+document.write ( "Ваш пароль: " + password2 + "." );
+  document.write ( "<br><a href=\"javascript:delete_cookie('username', 'password'); document.location.reload( );\">Удалить</a>" );
+}
+
+// -->
+</script>
+</body>
+</html>

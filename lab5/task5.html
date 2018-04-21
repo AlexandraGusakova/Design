@@ -1,0 +1,64 @@
+<html> 
+ <head>
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+ </head>
+<body> 
+<style>
+{font-family: Arial;}
+a{color: #369;font-weight: bold;}
+.selected{background: #c8a2c8;}
+    .some {font-style: italic;} 
+    .row {font-size: 1.5em;}
+</style>  
+<h2>Практикум jQuery на выборку</h2>
+<div class="container">
+    Практикум  <a href="http://belstu.by"> БГТУ</a> 
+    Факультет ИТ <strong > кафедра информатики и веб-дизайна</strong> Лабораторная работа  <mark> JQUERY</mark> учимся выбирать элементы на странице <em> работаем в аудитории</em> работаем....
+  
+    <div class="row">
+    <div class="col-md-5">Практикум <strong> работа </strong> ох, тяжелая эта работа из болота тащить бегемота <mark> <br>
+        Однако, стих</mark> Знаменитый дядя Чуковский <em > а еще стих про дяядю Степу</em> <br>
+        А потом позвонил
+Крокодил И со слезами просил:<br>
+        — Мой милый, хороший,<br>
+        Пришли мне калоши, И мне, и жене, и Тотоше..<br></div>
+    <div class="col-md-5"> Ах, те, что ты выслал <br>
+        На прошлой неделе,<br>
+        Мы давно уже съели<br>
+ <strong class="some"> И ждём не дождёмся,<br>
+     Когда же ты снова пришлёшь <br>
+     К нашему ужину Дюжину Новых и сладких калош! </strong><br>
+        А потом позвонили зайчатки:<br>
+        — Нельзя ли прислать перчатки?</div>
+    <div class="col-md-5"> А потом позвонили мартышки:<br>
+        Пришлите, пожалуйста, книжки! <br>
+        <strong> Медведь</strong> и Мартышки.</div><br>
+  </div>
+  <div class="col-md-5"> Стихотворение с сайта <a href="chukfamily.ru"> читайте</a> вспоминайте!</div>
+<hr>
+     <script type="text/javascript">
+     $(document).ready(function(){
+     $("strong").css("color","red"); 
+     $( "em" ).addClass( "selected" ); 
+     $("div.row mark").addClass("selected");
+     $("a").css("text-decoration","none");
+     $(".container * :contains('Практикум')").css("color","blue");
+     $(":contains('работа')").html((i, t) => t.replace(/работа/g, "ЗАБОТА"));
+     $("strong").toggleClass("some"); 
+      $(".row:eq(1)").removeClass();
+    $('a').each(function() {   //цвет ссылки
+    $(this).data('color', $(this).css('color') );
+    })
+    .click(function() {
+    alert( $(this).data('color') );
+});
+    $("a").css("color","pink");
+    
+    
+});
+       
+    </script>
+</div>
+
+</body> 
+</html>

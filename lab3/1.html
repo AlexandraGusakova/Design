@@ -1,0 +1,86 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <style type="text/css">
+        body{      
+            background-image: url(8.png);    
+        }
+        .text_rg{
+            background: white;
+            color: black;
+            padding: 10px;
+            border-radius: 10px; 
+            margin-top: 10px;
+            margin-left:150px;
+            box-shadow: 0 0 25px rgba(0,0,0,0.9);
+            width: 450px;    
+            font-family: Verdana, Arial, Helvetica, sans-serif; 
+            font-size: 15pt;
+        }
+        .text_lf{
+            background: white;
+            color: black;
+            padding: 10px;
+            box-shadow: 0 0 25px rgba(0,0,0,0.9);
+            border-radius: 10px; 
+            margin-top: 10px;
+            margin-left: 800px;
+            width: 450px;
+            font-family: Verdana, Arial, Helvetica, sans-serif; 
+            font-size: 15pt;
+        }
+        .cat{
+            font-size: 15pt;
+            font-style: italic;
+            color: darkred; 
+        }
+        .im{
+            text-align: center;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){ 
+            $(".im").hide();
+            $("div span").mouseover(function(){ 
+                $(this).hide();
+                $(".im").show();
+            });
+            $(".im").click(function(){
+                $("div span").show();
+                $(".im").hide();
+            })
+            
+            $("div").mousedown(function(){
+                $(this).css({"width":"+=20px", "border-radius":"+=5px"});
+            });
+            
+            /*$("div").mouseup(function(){
+                $(this).css({"background":"white", "width":"-=50px", "box-shadow":"0 0 25px rgba(0,0,0,0.9)", "border-radius":"10px"});
+            });*/
+        });
+    </script>
+</head>
+<body>
+   
+    <div class="text_rg">
+        1. Каждый хозяин <span class="cat">кошки</span>  знает, что <span class="cat">кошки</span> любят спать, но многие не догадываются сколько именно спят <span class="cat">кошки</span>. По подсчетам <span class="cat">кошки</span> проводят 70 % жизни во сне.  
+         <div class="im">
+            <img src='1.jpg' height="450px">
+        </div>
+    </div>
+    <div class="text_lf">
+        2. Люди не могут пить морскую воду, а <span class="cat">кошки</span> могут. Их почки фильтруют соль.
+        
+    </div>
+     <div class="text_rg">
+         3. У <span class="cat">кошек</span> видоизменилась интонация голоса, чтобы они смогли общаться с людьми. Более того, считается, что чем больше вы говорите с <span class="cat">кошкой</span>, тем больше кошка будет отвечать вам (мяукать в ответ).
+    </div>
+    <div class="text_lf">
+        4. У <span class="cat">кошек</span> намагниченные клетки мозга, которые действуют как компасы, позволяя им легко находить дорогу домой.
+    </div>
+    <div class="text_rg">
+        5. Домашние <span class="cat">кошки</span> бегают со скоростью 48 км в час, и это на 5 км быстрее, чем у самого быстрого человека Усейна Болта (43 км в час).
+    </div>
+    
+</body>
+</html>

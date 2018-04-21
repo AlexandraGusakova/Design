@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>
+    Radio
+</title>
+</head>
+<body>
+    <img src="1.jpg" width="40%" height="auto">
+    <img src="2.png" id = "ball" width="50px" height="auto">
+    
+    <script src='https://morulus.github.io/flyingbezier/dist/flyingbezier.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+    <script>
+
+            
+var ball = document.getElementById('ball');
+
+  ball.onmousedown = function(e) {
+  
+  var coords = getCoords(ball);
+  var shiftX = e.pageX - coords.left;
+  var shiftY = e.pageY - coords.top;
+
+  ball.style.position = 'absolute';
+  document.body.appendChild(ball);
+  moveAt(e);
+
+  ball.style.zIndex = 1000; // над другими элементами
+
+  function moveAt(e) {
+    ball.style.left = e.pageX - shiftX + 'px';
+    ball.style.top = e.pageY - shiftY + 'px';
+  }
+
+  document.onmousemove = function(e) {
+    moveAt(e);
+  };
+
+  ball.onmouseup = function() {
+    document.onmousemove = null;
+    ball.onmouseup = null;
+    coords2 = getCoords(ball);
+    
+    if (coords2.left <= 450 && coords2.top <= 200)
+        {alert('Поздравляем, студент!');}
+  };
+
+}
+
+ball.ondragstart = function() {
+  return false;
+};
+
+function getCoords(elem) {   // кроме IE8-
+  var box = elem.getBoundingClientRect();
+  return {
+    top: box.top + pageYOffset,
+    left: box.left + pageXOffset
+  };
+}
+
+    </script>
+</body>
+</html>

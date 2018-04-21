@@ -1,0 +1,125 @@
+<html>
+<head>
+<title>
+    Radio
+</title>
+</head>
+<body>
+    <h1>Calculate</h1>
+<h3>
+    <label for="1">x<sup>3</sup>/2</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label for="2">x<sup>4</sup> - 2x<sup>2</sup></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label for="3">3(x-5)<sup>2</sup></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label for="4">9x<sup>3</sup>/3x</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br>
+    <input type="radio" name="rad" value="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="rad" value="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="rad" value="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="rad" value="4">
+ </h3>
+<input type="button" id = "input" value = "Input" onclick="input()">
+<input type = "button" id = "calculate" value = "Calculate" onclick="calculate()">
+    <br><br><br>
+    <div id = "output">Здесь будет таблица</div>
+
+<script>
+    var x1, x2;
+    
+    function input()
+    {
+        x1 = prompt("Input x1", "");
+        x2 = prompt("Input x2", "");
+    }
+    
+    function first(x) 
+    {
+        return Math.pow(x, 3)/2;  
+    }
+    
+    function second(x)
+    {
+        return Math.pow(x, 4) - 2 * (Math.pow(x, 2));
+    }
+    
+    function third(x)
+    {
+        return 3 * Math.pow(x - 5, 2);
+    }
+    
+    function fourth(x)
+    {
+        return 9 * x /3 * x;
+    }
+
+    
+    function calculate()
+    {           
+        var inp = document.getElementsByName('rad');
+           for (var i = 0; i < inp.length; i++) 
+           {
+               if (inp[i].type == "radio" && inp[i].checked) 
+               {
+                   alert("selected: " + inp[i].value);
+                   var result = inp[i].value;                 
+               }
+           } 
+               
+           if (result == 1)
+               {
+                   func = first;
+                   /*
+                   for (var i = x1; i <= x2; )
+                       {
+                           table += "<tr><td>" + i + "</td><td>" + Math.pow(x1, 3)/2 + "</td></tr>";  
+                           x1 = x1 + d;
+                       } 
+                       */
+               }
+            if (result == 2)
+               {
+                   func = second;
+                   /*
+                   for (var i = x1; i <= x2; )
+                       {
+                           table += "<tr><td>" + i + "</td><td>" + Math.pow(x1, 4) - 2 * (Math.pow(x1, 2)) + "</td></tr>";   
+                           x1 = x1 + d;
+                       }
+                       */
+               }
+           if (result == 3)
+               {
+                   func = third;
+                   /*
+                   for (var i = x1; i <= x2; )
+                   {
+                       table += "<tr><td>" + i + "</td><td>" + 3 * Math.pow(x1 - 5, 2) + "</td></tr>";  
+                       x1 = x1 + d;
+                   }    
+                   */
+               }
+            if (result == 4)
+               {
+                   func = fourth;
+                   /*
+                   for (var i = x1; i <= x2; )
+                   {
+                       table += "<tr><td>" + i + "</td><td>" + 9 * x1 /3 * x1 + "</td></tr>";  
+                       x1 = x1 + d;
+                   }
+                   */
+    
+               }
+            
+        
+            var table = '<table border = "2" width="400px"> <tr> <td>X</td> <td>f(X)</td> </tr>' ;
+            for (var k = x1; k <= x2; k++)
+                {
+                    table += "<tr><td>" + k + "</td><td>" + func(k) + "</td></tr>"; 
+                }
+                table += '</table>'; 
+                document.getElementById("output").innerHTML = table;
+    }  
+    
+</script>
+</body>
+</html>

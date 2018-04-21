@@ -1,0 +1,81 @@
+
+.form-1 {
+    position: relative;
+    
+    width:1200px;
+    left:330px;
+    top:300px;
+    font-size:35px;
+}
+
+.div-1 {
+    position: relative;
+    top:-60px;
+    left:180px;
+    height:50px;
+}
+
+.p-1 {
+    top:-100px;
+    position: relative;
+    left:500px;
+}
+input {
+    top:23px;
+    position: relative;
+    right:30px;
+    height:25px;
+    width:200px;
+}
+
+.f-1 {
+    position: relative;
+    left:-79px;
+}
+
+.f-2 {
+      position: relative;
+    left:-115px;
+}
+
+.f-3 {
+      position: relative;
+    left:-60px;
+}
+
+button {
+    position: relative;
+    top:-50px;
+    left:415px;
+    width:130px;
+    height:45px;
+}
+
+.f-4 {
+      position: relative;
+    left:-45px;
+}
+
+select {
+    width:200px;
+    height:20px;
+    position: relative;
+    top:100px;
+    right:189px;
+     border-color: black;
+    border-style: 3px;
+}
+
+.input-2 {
+  width:150px;
+    height:20px;
+    position: relative;
+    border-color: black;
+    
+}
+
+.btn-2 {
+    position: relative;
+   top:-175px;
+    left:70px;
+}

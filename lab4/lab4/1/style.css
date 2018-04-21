@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html, body {height: 100%}
+
+
+
+body {
+	background-image: url('23.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   -ms-background-size: cover;
+   background-size: cover;
+}
+
+
+

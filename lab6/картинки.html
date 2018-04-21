@@ -1,0 +1,67 @@
+<html>
+ <head>
+  <meta charset="utf-8">
+ <title>Месяц</title>
+  <style> 
+      
+   .thumb
+  {
+    background-image: url(Wiki.jpg);
+    height: 100%;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;  
+   }
+      .img 
+   {
+    box-shadow: 0 0 5px 2px #00BFFF;
+    border: 2px solid #00BFFF; 
+    background: #222; 
+    margin-right: 10px;
+    margin-bottom: 10px;      
+   }
+      .really
+   {
+       box-shadow: 0 0 5px 4px red;
+    border: 3px solid red;
+height: 300px;
+    width: 300px;
+   }
+</style>      
+ </head>
+
+ <body>
+  <div id="season" class="thumb">
+   <img id="winter" class="img" src="1а.jpg" alt="Фотография 1" width="200" height="200">
+   <img id="spring" class="img" src="2а.jpg" alt="Фотография 2" width="200" height="200">
+   <img id="autumn" class="img" src="3а.jpg" alt="Фотография 3" width="200" height="200">
+   <img id="summer" class="img" src="4а.jpg" alt="Фотография 4" width="200" height="200">
+  </div>
+<script language="javascript" type="text/javascript">  
+    let date = new Date();    
+    let season = document.getElementById('season');
+    let month = date.getMonth();
+    console.log(month);
+    switch(month){
+        case 11:
+        case 0:
+        case 1: Seasons(0, "Привет, Саша! Наступила зима, идем кататься на коньках? "); break;
+        case 2:
+        case 3:
+        case 4: Seasons(1, "Привет, Саша! На улице весна, пойдем гулять?"); break;
+        case 5:
+        case 6:
+        case 7: Seasons(3, "Привет! Ура, лето! Бегом купаться!"); break;
+        case 8:
+        case 9:
+        case 10: Seasons(2, "Привет! Осень пришла! Надевайся теплее!"); break;
+    }
+    
+    function Seasons(id, text){
+        season.children[id].classList.add('really'); alert(text);
+    }
+</script>
+</body>      
+</html>

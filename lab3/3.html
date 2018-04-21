@@ -1,0 +1,84 @@
+<html>
+<head>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <style type="text/css">
+        body {
+              font-size: 14px;
+              font-family: Tahoma;
+              
+        }
+         .menu,
+        .menu ul {
+              margin: 0 0 0 -1px;
+              padding: 0;
+        }
+
+        .menu li {
+              float: left;
+              position: relative;
+              display: block;
+              margin: 0 1px;
+              z-index: 99999;
+              width: 160px;
+              background-color: #e69496;
+        }
+
+        .menu li a {
+              display: block;
+              padding: 8px 5px 0 5px;
+              height: 23px;
+              text-decoration: none;
+              text-align: center;
+              color: #fff;
+              font-weight: bold;
+        }
+
+        .menu li a:hover {
+              text-decoration: underline;
+              color: #9f5f61;
+        }
+
+        .menu ul {
+              position: absolute;
+              display: none;
+              left: 0;
+        }   
+        
+        .menu ul li {
+              border-top: 1px solid #fff;
+              float: right;
+              width: 150px;
+              margin: 0 0 0 0;
+              background-color: #eeb8b9;
+        }
+            </style>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('.menu li').hover(function() {
+                        $('ul', this).show();
+                    },
+                    function() {
+                        $('ul', this).hide();
+                    }
+                    );
+                });
+</script>
+</head>
+<body>
+<ul class="menu">
+  <li><img src="1.jpg" height="50px">
+    <ul class="menu">
+      <li><a href="#">Арифметика</a></li>
+      <li><a href="#">Алгебра</a></li>
+      <li><a href="#">Тригонометрия</a></li>
+    </ul>
+  </li>
+  <li><a href="#">Химия</a>
+    <ul class="menu">
+      <li><a href="#">Орагническая</a></li>
+      <li><a href="#">Неорганическая</a></li>
+    </ul>
+  </li>
+</ul>
+</body>
+</html>

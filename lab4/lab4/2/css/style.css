@@ -1,0 +1,96 @@
+.roll
+{
+    margin-top: 150px;
+}
+
+
+/* body content */
+header.collapsing-parallax + .site-main{
+	
+}
+.site-main .inner{
+	text-align: center;
+    
+}
+.row{}
+.row::after, .row::before {
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+}
+.cardview{
+	display: inline-block;
+	text-align: left;
+	position: relative;
+	width:28%;
+	max-height: 350px;
+	margin: 0 15px 20px 15px;
+	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.18),
+		0px 4px 14px 0px rgba(0, 0, 0, 0.15);
+}
+	.cardview img{
+		display: block;
+		position: relative;
+		background-position: center center;
+		background-size: cover;
+		height: 180px;
+		width: 100%;
+		top: 0;
+        transition: transform 1s;
+	}
+.cardview img:hover {
+  transform: scale(1.15);
+}
+.cardview-container {
+  height: 25vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 40px;
+}
+.cardview .content{
+	position: relative;
+	padding: 15px 20px;
+}
+.cardview h1{
+	font-size: 19px;
+	font-weight: 500;
+	margin: 0 0 12px 0;
+}
+.cardview p{
+	font-size: 14px;
+	margin: 0 15px 15px 0;
+}
+.cardview a{
+	font-size: 14px;
+	position: relative;
+	text-decoration:none;
+	color: #9e9ea2;
+	text-transform: uppercase;
+	padding: 10px 6px;
+	-webkit-transition: 0.3s ease-in-out background;
+   -moz-transition: 0.3s ease-in-out background;
+   -o-transition: 0.3s ease-in-out background;
+   transition: 0.3s ease-in-out background;
+}
+.cardview a:hover{
+	background: rgba(0,0,0,0.04);
+	border-radius: 6px;
+}
+@media screen and (max-width: 830px){
+	.cardview{
+		width: 44%;
+	}
+}
+@media screen and (max-width: 590px){
+	.cardview{
+		width: 80%;
+	}
+	@media screen and (max-width: 530px){
+	.cardview{
+		width: 85%;
+		margin: 15px auto;
+	}
+}
+    

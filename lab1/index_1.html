@@ -1,0 +1,110 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+ <title>Лабораторная 1</title>   
+</head>
+<body>
+   <form class="form-1" name=data> 
+       <p class="p-1">Расчет</p>
+       <div class="div-1">
+           <label for="1">x<sup>3</sup>/2</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <label for="2">x<sup>4</sup> - 2x<sup>2</sup></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <label for="3">3(x-5)<sup>2</sup></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <label for="4">9x<sup>3</sup>/3x</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <br>
+           <input type="radio" name="rad" class="1">
+           <input type="radio" name="rad" class="2">
+           <input type="radio" name="rad" class="3">
+           <input type="radio" name="rad" class="4">
+       </div>
+       <br><br>
+       <button id="Enter" onclick="enter()">Ввод</button>
+       
+       <button id="Calc" onclick="calc()">Расчет</button>
+   </form>
+   <script>
+       function enter()
+       {
+           var x = prompt("Введите x");
+           
+           return x;
+       }
+       function calc()
+       {
+           var otv;
+           x = enter();
+           alert(x);
+           
+           var inp = document.getElementsByName('rad');
+           for (var i = 0; i < inp.length; i++) {
+               if (inp[i].type == "radio" && inp[i].checked) 
+               {
+            alert("selected: " + inp[i].value);
+                   var result = inp[i].value;
+                   
+               }
+                                                 } 
+           
+           if (result=="x^4")
+               {
+                   otv=x^4;
+               }
+            if (result=="x/5-2^5+(28-x)")
+               {
+                   otv=x/5-2^5+(28-x);
+               }
+           if (result=="x/100")
+               {
+                   otv=x/100;
+               }
+            if (result=="x+1000-5/x")
+               {
+                   otv=x+1000-5/x;
+               }
+           alert(otv);
+           
+           var n=2;
+           var i=1;
+
+           document.write("<table border=1>");
+
+           while (i <= n){
+
+           document.write('<tr>');
+
+           var j=1;
+
+             while(j <= 1){
+
+             document.write('<td>');
+             
+              if (i==1)   
+             {
+                 document.write(result);  
+             }
+                 
+                 
+             if (i==2)   
+             {
+                 document.write(otv);  
+             }
+            
+
+        j++;
+                 
+
+    }
+
+    document.write("</tr>");
+
+    i++;
+
+}
+
+document.write("</table>");
+
+           
+       }
+   </script>
+</body>
+</html>

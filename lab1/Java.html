@@ -1,0 +1,33 @@
+<html>
+
+<head>
+</head>
+<body>
+
+<script language ="JavaScript">
+
+var i;
+
+var a = Number(prompt ("Введите начало диапазон"));
+var b = Number(prompt ("Введите окончание диапазона"));
+var c = Number(prompt ("Введите шаг"));
+
+
+
+var tabl = "<table align = 'center' border='3'><tr> <td>X</td> <td>f(X)</td> </tr>"
+
+for (i=a; i<b;i+=c)
+{
+	tabl += "<tr><td>" + i + "</td><td>" + Math.sin(i).toFixed(2) + "</td></tr>";
+}
+
+tabl +="<table>";
+
+document.body.innerHTML = tabl;
+
+
+
+</script>
+</body>
+
+</html>
