@@ -1,0 +1,34 @@
+doctype html
+html(lang="ru")
+	head
+		title Лидеры
+		meta(charset="utf-8")
+		link(rel="stylesheet", href="style.css")
+	body
+		table
+			caption Лидеры
+				tr
+					th Счет
+					th Имя
+					th Дата
+					if scores.length
+						each score in scores
+							if score
+								tr
+									td #{score.score}
+									td #{score.name}
+									td #{score.date}
+
+		table
+			caption По счёту
+				tr
+					th Счет
+					th Имя
+					th Дата
+					if scores.length
+						each score in scores
+							if score
+								tr
+									td #{score.score}
+									td #{score.name}
+									td #{score.date}

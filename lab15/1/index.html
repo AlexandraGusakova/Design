@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
+		<link href="style.css" rel="stylesheet" />
+	</head>
+	<body ng-app>
+		<nav class="{{active}}" ng-click="$event.preventDefault()">
+			<a href="#" class="home" ng-click="active='Главную страницу'">Главная</a>
+			<a href="#" class="home" ng-click="active='Вкладку О нас'">О нас</a>
+			<a href="#" class="projects" ng-click="active='Вкладку Товары'">Товары</a>
+			<a href="#" class="services" ng-click="active='Вкладку Заказать'">Заказать</a>
+			<a href="#" class="contact" ng-click="active='Вкладку Контакты'">Контакты</a>
+		</nav>
+		<p ng-hide="active">Выберите пункт</p>
+		<p ng-show="active">Вы выбрали <b>{{active}}</b></p>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	</body>
+</html>

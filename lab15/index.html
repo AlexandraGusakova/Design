@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>Food delivery</title>
+
+		<link href="http://fonts.googleapis.com/css?family=Cookie|Open+Sans:400,700" rel="stylesheet" />
+		<link href="style.css" rel="stylesheet" />
+
+	</head>
+	<body ng-app ng-controller="OrderFormController">
+        <nav class="{{type}}" ng-click="$event.preventDefault()">
+			<a href="#" class="pizzas" ng-click="type='Pizza'">Pizza</a>
+			<a href="#" class="sushis" ng-click="type='Sushi'">Sushi</a>
+			<a href="#" class="lapshas" ng-click="type='Lapsha'">Lapsha</a>
+		</nav>
+		<div ng-show="type">
+		<form>
+			<h1>{{type}}</h1>
+			 <ul id="servise" ng-show="type=='Pizza'">
+				<li ng-repeat='pizza in Pizza' ng-click='toggleActive(pizza)' ng-class='{active:pizza.active}' >{{pizza.name}} <span class='cost'>{{pizza.price | currency}}</span><br ng-show="pizza.active"><span ng-show="pizza.active" class="description">{{pizza.description}}</span><br ng-show="pizza.active"><img ng-show="pizza.active" ng-src="{{pizza.photo}}" class="photo"><br ng-show="pizza.active">
+             </li>              
+			</ul>
+			
+			 <ul id="servise" ng-show="type=='Sushi'">
+				<li ng-repeat='sushi in Sushi' ng-click='toggleActive(sushi)' ng-class='{active:sushi.active}'>{{sushi.name}} <span>{{sushi.price | currency}}</span><br ng-show="sushi.active"><span ng-show="sushi.active" class="description">{{sushi.description}}</span><br ng-show="sushi.active"><img ng-show="sushi.active" ng-src="{{sushi.photo}}" class="photo"><br ng-show="sushi.active"></li>
+
+			</ul>
+			
+			 <ul id="servise" ng-show="type=='Lapsha'">
+                 <li ng-repeat='lapsha in Lapsha' ng-click='toggleActive(lapsha)' ng-class='{active:lapsha.active}'>{{lapsha.name}} <span>{{lapsha.price | currency}}</span><br ng-show="lapsha.active"><span ng-show="lapsha.active" class="description">{{lapsha.description}}</span><br ng-show="lapsha.active"><img ng-show="lapsha.active" ng-src="{{lapsha.photo}}" class="photo"><br ng-show="lapsha.active"></li>
+				
+			</ul>
+                    
+                         <div class="total">
+				  Total: <span>{{total() | currency}}</span>
+			</div>
+             <form name="myForm" class="myForm">
+                 <br>
+                  User name: <input type="text" name="userName" ng-model="user.name" required><br>
+                  Address: <input type="text" name="lastName" ng-model="user.address" required><br>
+                  Time: <input type="text" name="lastName" ng-model="user.time" required><br>
+                  Wishes: <input type="text" name="wishes" ng-model="user.wishes" class="wishes"><br>
+                  
+                  <input type="submit" value="Submit"><br>
+                  <tt>user = {{user}}</tt><br/>
+              </form>
+			
+
+		</form>
+        </div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>

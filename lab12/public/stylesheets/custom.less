@@ -1,0 +1,171 @@
+@background-default: #e0e0e0;
+@background-a: #3b83c0;
+@background-b: #404245;
+
+@color-default: #333;
+@color-a: #fff;
+@color-b: #fff;
+
+@hover-background-default: #e8e8e8;
+@hover-background-a: #458ac6;
+@hover-background-b: #1b1c1d;
+
+@hover-color-default: #333;
+@hover-color-a: #fff;
+@hover-color-b: #fff;
+
+@font-size-small: 10px;
+@font-size-normal: 14px;
+@font-size-big: 18px;
+
+@line-height: 20px;
+
+@padding-small: 2px 4px;
+@padding-normal: 6px 12px;
+@padding-big: 10px 16px;
+
+@circle-diameter: 100px;
+
+
+div
+{
+	font-family: "Arial", sans-serif;
+	line-height: @line-height;
+	border-radius: 4px;
+	text-align: center;
+    text-decoration: none;
+	display: inline-block;
+}
+
+
+.small
+{
+	font-size: @font-size-small;
+	padding: @padding-small;
+}
+.normal
+{
+	font-size: @font-size-normal;
+	padding: @padding-normal;
+}
+.big
+{
+	font-size: @font-size-big;
+	padding: @padding-big;
+}
+
+
+.button
+{
+	&-default
+	{
+		background-color: @background-default;
+		color: @color-default;
+		.small;
+	}
+	&-a
+	{
+		background-color: @background-a;
+		color: @color-a;
+		.normal;
+	}
+	&-b
+	{
+		background-color: @background-b;
+		color: @color-b;
+		.big;
+	}
+}
+
+.button:hover
+{
+	&-default
+	{
+		background-color: @hover-background-default;
+		color: @hover-color-default;
+		.small;
+	}
+	&-a
+	{
+		background-color: @hover-background-a;
+		color: @hover-color-a;
+		.normal;
+	}
+	&-b
+	{
+		background-color: @hover-background-b;
+		color: @hover-color-b;
+		.big;
+	}
+}
+
+.circle
+{
+	display: inline-block;
+    background-color: spin(@background-a, 90);
+    border: 1px solid spin(@background-a, 90);
+	border-radius: 50%;
+    height: @circle-diameter;
+    width: @circle-diameter;
+
+	&:hover
+	{
+		background-color: spin(@background-a, 140);
+	    border: 1px solid spin(@background-a, 140);
+	}
+}
+
+.multibutton
+{
+	font-family: "Helvetica", sans-serif;
+	line-height: @line-height;
+	border-radius: 4px;
+	text-align: center;
+    text-decoration: none;
+	display: inline-block;
+	.big;
+}
+
+.warning
+{
+	background-color: #d0385d;
+	color: #ffffff;
+    &:hover
+	{
+		background-color: red;
+	}
+}
+.success
+{
+	background-color: #35bf5b;
+	color: #ffffff;
+    &:hover
+	{
+		background-color: blue;
+	}
+}
+.default
+{
+	background-color: #3585bf;
+	color: #ffffff;
+    &:hover
+	{
+		background-color: green;
+	}
+}
+
+.warningbutton
+{
+	.multibutton;
+	.warning;
+}
+.successbutton
+{
+	.multibutton;
+	.success;
+}
+.defaultbutton
+{
+	.multibutton;
+	.default;
+}

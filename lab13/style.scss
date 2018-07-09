@@ -1,0 +1,73 @@
+@import 'style2';
+
+
+#header {
+  width: 96%;
+  padding: 30px;
+  background: $yellow;
+}
+
+h1
+{
+    font-size: $size1+10px;
+    text-align: center;
+    font-style: italic;
+}
+
+body
+{
+    font-family:$font;
+    
+}
+
+#content
+{
+    font-style: normal;
+    width: 100%; 
+    background: $orange; 
+   
+}
+
+#footer 
+{
+    background: $red; 
+    padding: 10px; 
+}
+
+.about_butt {
+	display: inline-block;
+	height: 50px;
+	font-size: 40px;
+
+	&.blue_mod {
+        width: 50px;
+		background: $yellow;
+		color: $white;
+		transition: background .3s ease;
+
+		&:hover {
+			background: lighten($blue, 25%);
+		}
+	}
+	&.red_mod {
+           width: 50px;
+		background: $yellow;
+		color: $white;
+		transition: background .3s ease;
+		&:hover 
+        {
+			background: lighten($red, 25%);
+		}
+	}
+	&.yellow_mod {
+        width: 50px;
+		background: $yellow;
+		color: $white;
+		transition: background .3s ease;
+            &:hover 
+        {
+			background: lighten($green, 25%);
+		}
+		
+	}
+}

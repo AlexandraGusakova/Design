@@ -1,0 +1,71 @@
+#header {
+  width: 96%;
+  padding: 30px;
+  background: yellow;
+    color: black;
+}
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+  font-style: italic;
+}
+
+h2 {
+  font-size: 30px;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  font-style: normal;
+}
+
+body {
+  font-family: "times new roman";
+}
+
+#content {
+  font-style: 20px;
+  width: 100%;
+  background: orange;
+}
+
+#footer {
+  background: red;
+  padding: 10px;
+}
+
+.about_butt {
+  display: block;
+  height: 50px;
+  font-size: 40px;
+    display: inline-block;
+}
+.about_butt.blue_mod {
+  width: 50px;
+  background: yellow;
+  color: white;
+  transition: background .3s ease;
+}
+.about_butt.blue_mod:hover {
+  background: #8080ff;
+}
+.about_butt.red_mod {
+  width: 50px;
+  background: yellow;
+  color: white;
+  transition: background .3s ease;
+}
+.about_butt.red_mod:hover {
+  background: #ff8080;
+}
+.about_butt.yellow_mod {
+  width: 50px;
+  background: yellow;
+  color: white;
+  transition: background .3s ease;
+}
+.about_butt.yellow_mod:hover {
+  background: #01ff01;
+}
+
+/*# sourceMappingURL=style.css.map */

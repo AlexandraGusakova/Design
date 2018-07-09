@@ -1,0 +1,44 @@
+body
+{
+	font: 1.5em "Times ", sans-serif;
+}
+
+#italic
+{
+	width: 80%;
+	text-align: center;
+	margin: 0 auto;
+}
+.contentp
+{	
+	width: 100%;
+	position: relative;
+	height: 100%;
+}
+
+#bold
+{
+	font-weight: bold;
+}
+
+.blue
+{
+    color: blue;
+}
+
+footer{
+	position: relative;
+	color: #000;
+	background: #ddd;
+	text-align: center;
+	width: 100%;
+	
+}
+header{
+	position: relative;
+	color: #000;
+	background: #ddd;
+	text-align: center;
+	width: 100%;
+
+}

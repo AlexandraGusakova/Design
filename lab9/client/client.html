@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<title>Новости</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css">
+
+		<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="http://localhost:3000/socket.io/socket.io.js"></script>
+		<script type="text/javascript">
+
+			const socket = io.connect("http://localhost:3000/")
+
+			socket.on("connect", data => {
+				console.log("Есть подключение")
+				socket.emit("subscribe", {channel: "bstu_news"})
+			})
+
+			socket.on("reconnecting", data => {
+				console.log("Переподключение")
+			})
+
+			socket.on("message", message => {
+				console.log(`Получено сообщение: ${message}`)
+				showNews(message)
+			})
+
+			const showNews = data => $("#news").append(`<a class='card' href='#'><div id='text'><h1>${data}</h1></div></a>`)
+
+		</script>
+	</head>
+	<body>
+		<main id="news"></main>
+	</body>
+</html>

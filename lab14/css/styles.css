@@ -1,0 +1,56 @@
+*{
+	margin:0;
+	padding:0;
+}
+.contact-container {
+    width: 29%;
+    padding: 1%;
+    margin: 1% 1% 1% 1%;
+    display: inline-block;
+    background-color:;
+    border: 1px solid grey;
+    box-shadow: 0 0 80px rgba(0,0,0, .07);
+}
+
+.contact-container img {
+    max-width: 11%;
+    float: left;
+    margin-right: 10px;
+}
+
+.contact-container dt, .contact-container dd {
+    float:left;
+}
+.contact-container dt {
+    margin-right:1%;
+    clear:left;
+}
+
+dl{
+    margin-left: 13.5%;
+}
+
+h1{
+    display: inline-block;
+}
+
+.delete{
+    float: right;
+}
+
+.type{
+    float: right;
+    margin-top: .5px;
+}
+
+#addContact{
+    margin-top: 1%;
+    margin-left: 1%;
+}
+#add{
+    margin-top: 1%;
+}
+
+#filter{
+    margin: 1%;
+}
